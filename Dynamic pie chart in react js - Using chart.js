@@ -5,10 +5,8 @@ ChartJS.register(ArcElement, Tooltip, Legend, Title);
 
 function Piechart()
 {
-
   const [country, setCountry]= useState([]);
   const [population, setPopulation]=useState([]);
-
   useEffect( ()=>{
     const getcountry=[];
     const getpopulation=[];
@@ -20,11 +18,9 @@ function Piechart()
      {
       getcountry.push(resData[i].country_name);
       getpopulation.push(resData[i].population);
-     }
-     
+     }     
      setCountry(getcountry);
      setPopulation(getpopulation);
-
    }
  getdata();
   },[]);
@@ -33,8 +29,7 @@ function Piechart()
         <React.Fragment>
             <div className="container-fluid">
             <h1 className="mt-3">Top 10 Countries with the highest population</h1>
-            <div className="row">
-               
+            <div className="row">               
                 <div className="col-md-5 mb-3 mt-3 ">
             <Pie 
                width={300}
@@ -68,22 +63,17 @@ function Piechart()
                         'rgba(255, 109, 64, 0.6)',
                         'rgba(125, 169, 34, 0.8)',
                         'rgba(225, 99, 251, 0.3)',
-                        'rgba(225, 99, 101, 0.4)',
-                        
+                        'rgba(225, 99, 101, 0.4)',                        
                       ],
                       borderWidth: 1,
                       //hoverOffset:20
-                      offset: [20,0,0,0,0,0,0,0,0,0]
-                     
+                      offset: [20,0,0,0,0,0,0,0,0,0]                     
                     },
                   ],
-
-
             }}
 
             options={{                 
-                responsive: true,               
-                  
+                responsive: true,         
                 plugins:{
                     title:{
                         fontSize: 30,
@@ -95,10 +85,8 @@ function Piechart()
                       labels:{
                         font:{size:15}
                       }
-                    } 
-                       
-                 },
-                
+                    }                        
+                 },                
                }}    
              />
             </div>
